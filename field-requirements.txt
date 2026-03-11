@@ -1,0 +1,133 @@
+Job Intake Form Field Requirements
+Source: src/components/JobIntakeForm.tsx
+
+This document reflects CURRENT validation logic in the form.
+- REQUIRED = blocked on submit if empty.
+- OPTIONAL = not blocked on submit if empty.
+
+Section 1: Job Type
+Required:
+- Job type
+- Work type
+Optional:
+- Owner type
+
+Section 2: Customer / Owner Details
+Required:
+- First name
+- Last name
+- Email
+- Mobile
+Optional:
+- Customer full name
+- Phone
+- Is customer registered for GST?
+
+Section 3: Installation Address
+Required:
+- Street address
+- Suburb
+- State
+- Postcode
+Optional:
+- Full installation address
+- Property type
+- Story / floor count
+
+Section 4: Utility / Bill Details
+Required:
+- NMI
+- Electricity retailer
+Optional:
+- Account holder name
+- Bill issue date
+- Upload electricity bill
+
+Section 5: System Details
+Optional:
+- Solar included (toggle)
+- Panel manufacturer
+- Panel model
+- Panel quantity
+- Panel system size (kW)
+- Inverter included (toggle)
+- Inverter manufacturer
+- Inverter series
+- Inverter model
+- Inverter quantity
+- Battery included (toggle)
+- Battery manufacturer
+- Battery series
+- Battery model
+- Battery quantity
+- Battery capacity
+Note:
+- Solar detail fields are only shown when "Solar included" is ON.
+- Inverter detail fields are only shown when "Inverter included" is ON.
+- Battery detail fields are only shown when "Battery included" is ON.
+- Even when shown, these fields are currently optional.
+
+Section 6: Installation Details
+Optional:
+- Connected type
+- Installation style
+- Battery installation type
+- Battery installation location
+- Existing solar system retained?
+- Backup / blackout protection required?
+- Installer presence required?
+- Special site notes
+- Customer instructions
+- Site preparation notes
+
+Section 7: Schedule / Assignment
+Optional:
+- Installation date
+- Preferred install date
+- Installer name
+- Designer name
+- Electrician name
+- Operations applicant name
+- Operations contact
+- Operations email
+
+Section 8: Logistics / Pickup Details
+Optional:
+- Pickup location
+- Pickup contact person
+- Pickup contact number
+- Pickup hours
+- Pickup sales order reference
+- Delivery / warehouse notes
+
+Section 9: References / Internal Fields
+Optional:
+- CRM ID
+- PO number
+- Order reference
+- Proposal number / signed project ID
+- Retailer entity name
+- STC trader name
+- Financial payment / rebate field
+
+Section 10: Document Uploads
+Optional:
+- Upload signed project
+- Upload solar proposal
+- Upload electricity bill
+- Upload site photos
+- Upload supporting documents
+
+Quick Required Summary (all sections):
+- Job type
+- Work type
+- First name
+- Last name
+- Email
+- Mobile
+- Street address
+- Suburb
+- State
+- Postcode
+- NMI
+- Electricity retailer
