@@ -58,7 +58,42 @@ export default function SignupPage() {
     }
 
     if (data.session) {
-      await supabase.auth.signOut();
+      let navigated = false;
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((event) => {
+        if (event !== "SIGNED_OUT" || navigated) return;
+
+        navigated = true;
+        subscription.unsubscribe();
+        setIsSubmitting(false);
+        navigate("/login", {
+          replace: true,
+          state: { signupSuccess: true },
+        });
+      });
+
+      const { error: signOutError } = await supabase.auth.signOut();
+
+      if (signOutError) {
+        subscription.unsubscribe();
+        setError(signOutError.message);
+        setIsSubmitting(false);
+        return;
+      }
+
+      window.setTimeout(() => {
+        if (navigated) return;
+
+        navigated = true;
+        subscription.unsubscribe();
+        setIsSubmitting(false);
+        navigate("/login", {
+          replace: true,
+          state: { signupSuccess: true },
+        });
+      }, 300);
+      return;
     }
 
     setIsSubmitting(false);

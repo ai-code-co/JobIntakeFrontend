@@ -43,7 +43,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigate to={session ? "/intake" : "/login"} replace />} />
       <Route path="/login" element={session ? <Navigate to="/intake" replace /> : <LoginPage />} />
-      <Route path="/signup" element={session ? <Navigate to="/intake" replace /> : <SignupPage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route path="/intake" element={session ? <JobIntakeForm /> : <Navigate to="/login" replace />} />
       <Route path="*" element={<Navigate to={session ? "/intake" : "/login"} replace />} />
     </Routes>
